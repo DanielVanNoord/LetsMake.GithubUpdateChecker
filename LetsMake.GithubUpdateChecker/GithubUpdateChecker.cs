@@ -2,45 +2,45 @@
 
 namespace LetsMake
 {
-    internal class GithubUpdateChecker
+    public class GithubUpdateChecker
     {
-        internal SemanticVersion CurrentVersion
+        public SemanticVersion CurrentVersion
         {
             get;
             private set;
         }
 
-        internal string RemoteRepositoryName
+        public string RemoteRepositoryName
         {
             get;
             private set;
         }
 
-        internal string RemoteRepositoryOwner
+        public string RemoteRepositoryOwner
         {
             get;
             private set;
         }
 
-        internal IReadOnlyList<Octokit.Release> Releases
+        public IReadOnlyList<Octokit.Release> Releases
         {
             get;
             private set;
         } = null;
 
-        internal GithubUpdateChecker(SemanticVersion currentRunningVersion, string remoteRepositoryOwner, string remoteRepositoryName)
+        public GithubUpdateChecker(SemanticVersion currentRunningVersion, string remoteRepositoryOwner, string remoteRepositoryName)
         {
             CurrentVersion = currentRunningVersion;
             RemoteRepositoryName = remoteRepositoryName;
             RemoteRepositoryOwner = remoteRepositoryOwner;
         }
 
-        internal async void CheckForUpdates()
+        public async void CheckForUpdates()
         {
             Releases = await GitHubReleases.GetReleases(RemoteRepositoryOwner, RemoteRepositoryName);
         }
 
-        internal bool UpdateAvailable
+        public bool UpdateAvailable
         {
             get
             {
@@ -48,7 +48,7 @@ namespace LetsMake
             }
         }
 
-        internal Octokit.Release LatestRelease
+        public Octokit.Release LatestRelease
         {
             get
             {
@@ -56,7 +56,7 @@ namespace LetsMake
             }
         }
 
-        internal Octokit.Release LatestPrerelease
+        public Octokit.Release LatestPrerelease
         {
             get
             {
@@ -64,7 +64,7 @@ namespace LetsMake
             }
         }
 
-        internal bool HasNewerRelease
+        public bool HasNewerRelease
         {
             get
             {
@@ -72,7 +72,7 @@ namespace LetsMake
             }
         }
 
-        internal bool HasNewerPrerelease
+        public bool HasNewerPrerelease
         {
             get
             {
