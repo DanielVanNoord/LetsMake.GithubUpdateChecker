@@ -3,7 +3,21 @@
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
     <SignAssembly>False</SignAssembly>
+    <Title>Github Update Checker</Title>
+    <Authors>Daniel Van Noord</Authors>
+    <Copyright>Copyright 2022, Daniel Van Noord</Copyright>
+    <PackageProjectUrl>https://github.com/DanielVanNoord/LetsMake.GithubUpdateChecker</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/DanielVanNoord/LetsMake.GithubUpdateChecker</RepositoryUrl>
+    <PackageLicenseFile>license.md</PackageLicenseFile>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\license.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Octokit" Version="4.0.1" />

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 
 namespace LetsMake
 {
@@ -57,7 +58,7 @@ namespace LetsMake
         /// <summary>
         /// Checks the specified repository for releases. May throw based on failures to get data.
         /// </summary>
-        public async void CheckForUpdates()
+        public async Task CheckForUpdates()
         {
             Releases = await GitHubReleases.GetReleases(RemoteRepositoryOwner, RemoteRepositoryName);
         }
