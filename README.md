@@ -1,1 +1,2 @@
 # LetsMake.GithubUpdateChecker
+Github Update Checker is a simple library to check Github for the releases of a project. If the release tags are in Semantic Version format (with a v/V allowed in the front) it will also report the availability of new full release and pre-release releases.
